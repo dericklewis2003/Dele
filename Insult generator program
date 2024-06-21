@@ -1,0 +1,31 @@
+#insult genrator using if else and elif statements
+# https://replit.com/@lewisderick4/insult-genrator-using-if-else-and-elif-statements-day-8?v=1
+import random
+
+adjectives = ['Bumbling', 'Gormless', 'Absurd', 'Buffoonish', 'Clueless', 
+              'Ridiculous', 'Slack-jawed', 'Dim-witted', 'Goofy', 'Imbecilic']
+nouns = ['Knucklehead', 'Doofus', 'Nincompoop', 'Nitwit', 'Blockhead', 
+         'Buffoon', 'Dingbat', 'Dunderhead', 'Muttonhead', 'Schmuck']
+
+# List of names
+names = ["Josh", "Alice", "Bob", "Emma", "Charlie"]
+
+def generate_insult():
+    user = input("What is your name? ").strip()  # Remove any extra whitespace
+
+    # Case 1: User provides a name that is in the list
+    if user.capitalize() in names:
+        insult_adjective = random.choice(adjectives)
+        insult_noun = random.choice(nouns)
+        print(f"{user} is a {insult_adjective.lower()} {insult_noun.lower()}!")
+
+    # Case 2: User provides an empty name
+    elif user == "":
+        print("Please enter your name.")
+
+    # Case 3: User provides a name that is not in the list
+    else:
+        print(f"Sorry, {user}, I don't have an insult prepared for you.")
+
+# Call the function to generate an insult
+generate_insult()
